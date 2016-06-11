@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Time Keeper</title>
+</head>
+<body>
+	<div class="container admin-view">
+		<div class="timer text-center">
+			<div class="timer-container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="center-block">
+							<h3>Consumed: </h3>
+							<span class="consumed"><span id="minutes">07</span>:<span id="seconds">00</span></span>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="center-block">
+							<h3>Time Left: </h3>
+							<span class="left"><span id="minutes">07</span>:<span id="seconds">00</span></span>
+						</div>
+					</div>			
+					
+					<div class="col-md-4">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>POI</h1>
+							<span class="poi"><span id="minutes">00</span>:<span id="seconds">15</span></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4" id="grace-period">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>Grace Period: </h1>
+							<span class="grace"><span id="minutes">00</span>:<span id="seconds">15</span></span>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>Extra Time: </h1>
+							<span class="extra"><span id="minutes">00</span>:<span id="seconds">00</span></span>
+						</div>
+					</div>
+					
+					<div class="col-md-4">
+						<div class="center-block" id="poiCooldown">
+							<div class="clock"></div>
+							<h1>POI Cooldown: </h1>
+							<span class="poiCD"><span id="minutes">00</span>:<span id="seconds">10</span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<button class="btn btn-info" id="btn-launchTimer">Launch Timer Window</button><br><br>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			Timer
+				<div class="btn-group timer-controls">					
+					<button class="btn btn-success" id="btn-startTimer">Start</button>
+					<button class="btn btn-primary"id="btn-pauseTimer">Pause</button>
+					<button class="btn btn-danger"id="btn-resetTimer">Reset</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			POI
+				<div class="btn-group poi-controls">
+					<button class="btn btn-danger" id="btn-resetPOITimer">Reset</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row"><form role="form">
+			<div class="col-md-6">				
+				<div class="form-group">
+					<label for="proposition">Starting Time:</label>
+					<input type="number" min="0" step="1" class="input-lg form-control" id="frm-startMinute" placeholder="Minutes" value="7">
+					<input type="number" min="0" step="1" class="input-lg form-control" id="frm-startSecond" placeholder="Seconds" value="0">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="name">Grace Time:</label>
+					<input type="number" min="0" step="1" class="input-lg form-control" id="frm-graceStartMinute" placeholder="Minutes" value="0">
+					<input type="number" min="0" step="1" class="input-lg form-control" id="frm-graceStartSecond" placeholder="Seconds"  value="15">
+				</div>
+			</div>
+			</form>
+		</div>
+
+		<div class="row">
+			<div class="col-md-7">
+				<form role="form">
+					<div class="form-group">
+						<label for="proposition">Proposition:</label>
+						<input type="text" class="input-lg form-control" id="proposition" value="Sample Proposition">
+					</div>
+					<div class="form-group">
+						<label for="name">Position:</label>
+						<input type="text" class="input-lg form-control" id="name" value="Prime Minister">
+					</div>
+				</form>
+			</div>
+			
+			<div class="col-md-5">
+				<form class="form-inline">
+				  <div class="form-group">
+				    <div class="input-group">
+				      <div class="input-group-addon">Accepted</div>
+				      	<div class="input-group-addon">
+				      		<span class="counter" id="poi-accepted"> 0 </span>
+				      	</div>
+				      	
+				      	<div class="input-group-addon">
+				      		<div class="btn-group timer-controls">					
+								<button class="btn btn-success" id="btn-poiAccept-plus">+1</button>
+								<!-- <button class="btn btn-primary" id="btn-poiAccept-reset">Reset</button> -->
+							</div>
+				      	</div>
+
+				      <div class="input-group-addon">Rejected</div>
+				      	<div class="input-group-addon">
+				      		<span class="counter" id="poi-rejected"> 0 </span>
+				      	</div>
+				      <div class="input-group-addon">
+				      	<div class="input-group-addon">
+				      		<div class="btn-group timer-controls">					
+								<button class="btn btn-success" id="btn-poiReject-plus">+1</button>
+								<button class="btn btn-primary" id="btn-poiReject-reset">Reset</button>
+							</div>
+				      	</div>
+				      </div>
+				    </div>
+				  </div>
+				</form>
+				<br>
+				<button class="btn btn-lg btn-primary" id="btn-setHeader">Set Headers</button>
+				<button class="btn btn-lg btn-primary" id="btn-setTimer">Set Timers</button>
+				<button class="btn btn-lg btn-primary" id="btn-setEverything">Set All</button>
+			</div>
+		</div>
+		<div class="footer navbar-fixed-bottom">
+		&copy <a href="https://about.me/abacani">Argieson Bacani</a> 2015
+		</div>
+	</div> <!--End of container-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/metro-bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<!--script src="assets/js/angular.min.js"></script-->
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/buzz.min.js"></script>
+	<script src="assets/js/script.js"></script>
+</body>
+</html>

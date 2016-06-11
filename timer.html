@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Debate Timer</title>
+</head>
+<body>
+	<div class="row text-center">
+		<div class="col-md-12">
+			<div class="center-block">
+				<span class="proposition">
+					<h1 id="proposition">
+						Sample Proposition
+					</h2>
+				</span>					
+			</div>
+		</div>
+	</div>
+
+	<div class="row text-center">
+		<div class="col-md-12">
+			<div class="center-block">
+				<!-- <img id="img" src="assets/pics/img1.jpg" alt="speaker"> -->
+				<h3 id="name">Name</h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12"> <!--Left side-->
+			<div class="timer text-center audience"> <!--Timer-->
+				<div class="row">
+					<div class="col-md-12" id="time-left">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>Time Left: </h1>
+							<span class="left"><span id="minutes">07</span>:<span id="seconds">00</span></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 hidden" id="grace-period">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>Grace Period: </h1>
+							<span class="grace"><span id="minutes">00</span>:<span id="seconds">15</span></span>
+						</div>
+					</div>
+				</div>			
+
+				<div class="row">
+					<div class="col-md-12 hidden" id="extra-time">
+						<div class="center-block">
+							<div class="clock"></div>
+							<h1>Extra Time: </h1>
+							<span class="extra"><span id="minutes">00</span>:<span id="seconds">00</span></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="hidden row">
+					<div class="col-md-12">
+						<div class="center-block">
+							<h3>Consumed: </h3>
+							<span class="consumed"><span id="minutes">07</span>:<span id="seconds">00</span>.<span id="milliseconds">00</span></span>
+						</div>
+					</div>
+				</div>
+			</div><!--Timer end-->
+
+			<div class="row timer text-center"> <!--POI-->
+				<div class="col-md-12">
+					<div class="center-block hidden" id="poiTimer">
+						<h1 id="display-yield" class="hidden alert alert-danger">Yield!</h1>
+						<div class="clock"></div>
+						<h1>Point of Information: </h1>
+						<span class="poi"><span id="minutes">00</span>:<span id="seconds">15</span></span>
+					</div>
+			
+					<div class="hidden center-block" id="poiCooldown">
+						<div class="clock"></div>
+						<h1>POI Cooldown: </h1>
+						<span class="poiCD"><span id="minutes">00</span>:<span id="seconds">10</span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row text-center">
+				<div class="col-md-12 poi-display">					
+					<form class="form-inline">
+					  <div class="form-group">
+					    <div class="input-group">
+					      <div class="input-group-addon">Accepted</div>
+					      	<input type="text" id="poi-accepted" class="form-control input-lg" placeholder="Amount" readonly>
+					      <div class="input-group-addon">Rejected</div>
+					      	<input type="text" id="poi-rejected" class="form-control input-lg" placeholder="Amount" readonly>
+					    </div>
+					  </div>
+					</form>
+				</div>
+			</div>			
+		</div>
+	</div>
+		
+	<div class="footer navbar-fixed-bottom">
+		&copy <a href="https://about.me/abacani">Argieson Bacani</a> 2015
+	</div>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/metro-bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script src="jquery-2.1.4.min.js"></script>
+	<!--script src="assets/js/angular.min.js"></script-->
+	<script src="bootstrap.min.js"></script>
+</body>
+</html>
